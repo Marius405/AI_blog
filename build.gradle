@@ -4,11 +4,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 jar {
-	manifest {
-		attributes(
-				'Main-Class': 'Application.MO.MoApplication'
-		)
-	}
+	enabled=false;
 }
 group = 'Application'
 version = '0.0.1-SNAPSHOT'
