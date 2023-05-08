@@ -18,7 +18,7 @@
                                     <li>Slider Home</li>
                                 </ul>
                             </li>
-                            <li><a href="">About</a></li>
+                            <li>About</li>
 
                             <li>
                                 <div class="header-icons">

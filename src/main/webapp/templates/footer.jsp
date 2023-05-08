@@ -21,11 +21,11 @@
                 <div class="footer-box pages">
                     <h2 class="widget-title">Pages</h2>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Shop</a></li>
-                        <li><a href="">News</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Shop</li>
+                        <li>News</li>
+                        <li>Contact</li>
                     </ul>
                 </div>
             </div>

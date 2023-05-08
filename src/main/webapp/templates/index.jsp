@@ -150,7 +150,7 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 						<%for(Quote q:quote){%>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="../assets/img/avaters/avatar1.png" alt="">
+								<img src="../assets/img/avaters/avatar1.png" alt="Mathematician picture">
 							</div>
 							<div class="client-meta">
 								<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
@@ -164,7 +164,7 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="../assets/img/avaters/avatar1.png" alt="">
+								<img src="../assets/img/avaters/avatar1.png" alt="Mathematician picture">
 							</div>
 							<div class="client-meta">
 								<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
@@ -178,7 +178,7 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="../assets/img/avaters/avatar1.png" alt="">
+								<img src="../assets/img/avaters/avatar1.png" alt=""Mathematician picture>
 							</div>
 							<div class="client-meta">
 								<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
@@ -192,7 +192,7 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="../assets/img/avaters/avatar1.png" alt="">
+								<img src="../assets/img/avaters/avatar1.png" alt="Mathematician picture">
 							</div>
 							<div class="client-meta">
 								<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
@@ -206,7 +206,7 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 						</div>
 						<div class="single-testimonial-slider">
 						<div class="client-avater">
-							<img src="../assets/img/avaters/avatar1.png" alt="">
+							<img src="../assets/img/avaters/avatar1.png" alt="Mathematician picture">
 						</div>
 						<div class="client-meta">
 							<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
@@ -274,7 +274,7 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 				<%for(Article a:listetop){%>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="/AI/Article/<%=a.getId()%>/<%=a.getUrl()%>"><div class="latest-news-bg news-bg-1" style="background-image: url(<%=a.getImage()%>)"></div></a>
+						<div class="latest-news-bg news-bg-1" style="background-image: url(<%=a.getImage()%>)"></div>
 						<div class="news-text-box">
 							<h3><a href="/AI/Article/<%=a.getId()%>/<%=a.getUrl()%>"><%=a.getTitre()%></a></h3>
 							<p class="blog-meta">
@@ -282,7 +282,7 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 								<span class="date"><i class="fas fa-calendar"></i> <%=a.getDate().toLocaleString()%></span>
 							</p>
 							<p class="excerpt"><%=a.getResume()%></p>
-							<a href="/AI/Article/<%=a.getId()%>/<%=a.getUrl()%>" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<a href="/AI/Article/<%=a.getId()%>/<%=a.getUrl()%>" class="read-more-btn">To read more about  <%=a.getTitre()%><i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
