@@ -12,8 +12,8 @@
 </head>
 <body>
     <form action="<%= request.getContextPath() %>/AI/Admin/Login" method="post">
-        <label>Email</label><input type="email" name="email">
-        <label>Mot de passe</label><input type="password" name="mdp">
+        <label>Email</label><input type="email" name="email" value="admin@gmail.com">
+        <label>Mot de passe</label><input type="password" name="mdp" value="mdp">
         <input type="submit" value="Se connecter">
     </form>
 </body>
