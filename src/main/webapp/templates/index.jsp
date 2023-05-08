@@ -82,8 +82,6 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 							<p class="subtitle">Safety & responsibility</p>
 							<h1>Your daily blog about <strong>AI</strong></h1>
 							<div class="hero-btns">
-								<a href="shop.html" class="boxed-btn">Fruit Collection</a>
-								<a href="contact.html" class="bordered-btn">Contact Us</a>
 							</div>
 						</div>
 					</div>
@@ -240,10 +238,9 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 				<div class="col-lg-6 col-md-12">
 					<div class="abt-text">
 						<p class="top-sub">Since Year 1999</p>
-						<h2>We are </strong><span class="orange-text">Fruitkha</span></h2>
-						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-						<a href="about.html" class="boxed-btn mt-4">know more</a>
+						<h2>We are </strong><span class="orange-text"><strong>AI</strong> Blog</span></h2>
+						<p>Many of the pioneers who began developing artificial neural networks weren't sure how they actually worked - and we're no more certain today</p>
+						<p>It may have looked like clunky blocks of circuitry, soldered together by hand in a mass of wires and boxes, but what Cowan was witnessing was an early analogue form of a neural network – a precursor to the most advanced artificial intelligence of today, including the much discussed ChatGPT with its ability to generate written content in response to almost any command. ChatGPT's underlying technology is a neural network. (Read more about the <strong>AI</strong> emotions dreamed up by ChatGPT)</p>
 					</div>
 				</div>
 			</div>
@@ -256,7 +253,6 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
     	<div class="container">
         	<h3>December sale is on! <br> with big <span class="orange-text">Discount...</span></h3>
             <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
-            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
         </div>
     </section>
 	<!-- end shop banner -->
@@ -278,9 +274,9 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 				<%for(Article a:listetop){%>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-1" style="background-image: url(<%=a.getImage()%>)"></div></a>
+						<a href="/AI/Article/<%=a.getId()%>/<%=a.getUrl()%>"><div class="latest-news-bg news-bg-1" style="background-image: url(<%=a.getImage()%>)"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single-news.html"><%=a.getTitre()%></a></h3>
+							<h3><a href="/AI/Article/<%=a.getId()%>/<%=a.getUrl()%>"><%=a.getTitre()%></a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i> <%=a.getDate().toLocaleString()%></span>
@@ -295,7 +291,6 @@ List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<a href="news.html" class="boxed-btn">More News</a>
 				</div>
 			</div>
 		</div>
