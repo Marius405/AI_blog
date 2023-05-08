@@ -140,7 +140,7 @@
                                             <td><%=a.getTitre()%></td>
                                             <td><%=a.getResume()%></td>
                                             <td><%if(a.getEtat()==1){%><p style="color: #00A000">Publié<p><%}else {%><p style="color: #990000">Non publié<p><%}%></td>
-                                            <td><a><button class="btn btn-primary">Modifier</button></a></td>
+                                            <td><a href="/AI/Admin/ToModifArticle/<%=a.getId()%>"><button class="btn btn-primary">Modifier</button></a></td>
                                         </tr>
                                         <%}%>
                                     </tbody>

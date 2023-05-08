@@ -6,25 +6,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.sql.Timestamp;
 
-@Entity(name = "article")
+@Entity(name = "quote")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Article {
+public class Quote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titre;
-    private  String resume;
-    private String contenu;
+    private String nom;
+    private  String fonction;
+    private String texte;
     private String image;
-    private int etat;
-    private Timestamp date;
-    public String getUrl(){
-        return this.getTitre().replace(" ","-");
-    }
 }

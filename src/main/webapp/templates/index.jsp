@@ -1,9 +1,11 @@
 <%@ page import="Application.MO.Model.Article" %>
 <%@ page import="java.util.List" %>
+<%@ page import="Application.MO.Model.Quote" %>
 <!DOCTYPE html>
 <html lang="en">
 <%
 List<Article> listetop =(List<Article>)request.getAttribute("listetop");
+List<Quote> quote=(List<Quote>)request.getAttribute("quote");
 %>
 <head>
 	<meta charset="UTF-8">
@@ -12,7 +14,7 @@ List<Article> listetop =(List<Article>)request.getAttribute("listetop");
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Fruitkha</title>
+	<title>AI</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
@@ -77,8 +79,8 @@ List<Article> listetop =(List<Article>)request.getAttribute("listetop");
 				<div class="col-lg-9 offset-lg-2 text-center">
 					<div class="hero-text">
 						<div class="hero-text-tablecell">
-							<p class="subtitle">Fresh & Organic</p>
-							<h1>Delicious Seasonal Fruits</h1>
+							<p class="subtitle">Safety & responsibility</p>
+							<h1>Your daily blog about <strong>AI</strong></h1>
 							<div class="hero-btns">
 								<a href="shop.html" class="boxed-btn">Fruit Collection</a>
 								<a href="contact.html" class="bordered-btn">Contact Us</a>
@@ -136,82 +138,9 @@ List<Article> listetop =(List<Article>)request.getAttribute("listetop");
 	<!-- end features list section -->
 
 	<!-- product section -->
-	<div class="product-section mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Our</span> Products</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="../assets/img/products/product-img-1.jpg" alt=""></a>
-						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="../assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="../assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- end product section -->
 
 	<!-- cart banner section -->
-	<section class="cart-banner pt-100 pb-100">
-    	<div class="container">
-        	<div class="row clearfix">
-            	<!--Image Column-->
-            	<div class="image-column col-lg-6">
-                	<div class="image">
-                    	<div class="price-box">
-                        	<div class="inner-price">
-                                <span class="price">
-                                    <strong>30%</strong> <br> off per kg
-                                </span>
-                            </div>
-                        </div>
-                    	<img src="../assets/img/a.jpg" alt="">
-                    </div>
-                </div>
-                <!--Content Column-->
-                <div class="content-column col-lg-6">
-					<h3><span class="orange-text">Deal</span> of the month</h3>
-                    <h4>Hikan Strwaberry</h4>
-                    <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
-                    <!--Countdown Timer-->
-                    <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2020/2/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
-                	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- end cart banner section -->
 
 	<!-- testimonail-section -->
@@ -220,14 +149,15 @@ List<Article> listetop =(List<Article>)request.getAttribute("listetop");
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1 text-center">
 					<div class="testimonial-sliders">
+						<%for(Quote q:quote){%>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
 								<img src="../assets/img/avaters/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Saira Hakim <span>Local shop owner</span></h3>
+								<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" <%=q.getTexte()%> "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -236,12 +166,12 @@ List<Article> listetop =(List<Article>)request.getAttribute("listetop");
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="../assets/img/avaters/avatar2.png" alt="">
+								<img src="../assets/img/avaters/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>David Niph <span>Local shop owner</span></h3>
+								<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" <%=q.getTexte()%> "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -250,18 +180,47 @@ List<Article> listetop =(List<Article>)request.getAttribute("listetop");
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="../assets/img/avaters/avatar3.png" alt="">
+								<img src="../assets/img/avaters/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Jacob Sikim <span>Local shop owner</span></h3>
+								<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" <%=q.getTexte()%> "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
 								</div>
 							</div>
 						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="../assets/img/avaters/avatar1.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
+								<p class="testimonial-body">
+									" <%=q.getTexte()%> "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+						<div class="client-avater">
+							<img src="../assets/img/avaters/avatar1.png" alt="">
+						</div>
+						<div class="client-meta">
+							<h3><%=q.getNom()%><span><%=q.getFonction()%></span></h3>
+							<p class="testimonial-body">
+								" <%=q.getTexte()%> "
+							</p>
+							<div class="last-icon">
+								<i class="fas fa-quote-right"></i>
+							</div>
+						</div>
+					</div>
+						<%}%>
 					</div>
 				</div>
 			</div>
@@ -281,7 +240,7 @@ List<Article> listetop =(List<Article>)request.getAttribute("listetop");
 				<div class="col-lg-6 col-md-12">
 					<div class="abt-text">
 						<p class="top-sub">Since Year 1999</p>
-						<h2>We are <span class="orange-text">Fruitkha</span></h2>
+						<h2>We are </strong><span class="orange-text">Fruitkha</span></h2>
 						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
 						<a href="about.html" class="boxed-btn mt-4">know more</a>
@@ -324,10 +283,10 @@ List<Article> listetop =(List<Article>)request.getAttribute("listetop");
 							<h3><a href="single-news.html"><%=a.getTitre()%></a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> <%=a.getDate()%></span>
+								<span class="date"><i class="fas fa-calendar"></i> <%=a.getDate().toLocaleString()%></span>
 							</p>
 							<p class="excerpt"><%=a.getResume()%></p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<a href="/AI/Article/<%=a.getId()%>/<%=a.getUrl()%>" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>

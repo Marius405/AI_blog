@@ -58,6 +58,14 @@ public class AdminController {
         val.setViewName("BackOffice/ajout_article");
         return val;
     }
+    @GetMapping("/ToModifArticle/{id}")
+    public ModelAndView toModifArticle(@PathVariable long id){
+        ModelAndView val=new ModelAndView();
+        Article a=this.articleservice.find(id);
+        val.setViewName("BackOffice/modification_article");
+        val.addObject("article",a);
+        return val;
+    }
     @PostMapping("/AjoutArticle")
     public ModelAndView ajoutArticle(@RequestParam String titre,@RequestParam String resume,@RequestParam String contenu,@RequestParam String image){
         ModelAndView val=new ModelAndView();
@@ -68,6 +76,24 @@ public class AdminController {
         a.setEtat(1);
         LocalDateTime now =java.time.LocalDateTime.now();
         a.setDate(Timestamp.valueOf(now));
+        a.setImage(image);
+        this.articleservice.insert(a);
+        //val=new ModelAndView("redirect:/ListeProduitAdmin");
+        val.setViewName("BackOffice/accueil_admin");
+        val.addObject("liste",this.articleservice.listearticle());
+        return val;
+    }
+    @PostMapping("/ModifArticle")
+    public ModelAndView modifArticle(@RequestParam long id,@RequestParam String titre,@RequestParam String resume,@RequestParam String contenu,@RequestParam String image,@RequestParam int etat){
+        ModelAndView val=new ModelAndView();
+        Article a=new Article();
+        a=this.articleservice.find(id);
+        a.setTitre(titre);
+        a.setResume(resume);
+        a.setContenu(contenu);
+        a.setEtat(etat);
+        /*LocalDateTime now =java.time.LocalDateTime.now();
+        a.setDate(Timestamp.valueOf(now));*/
         a.setImage(image);
         this.articleservice.insert(a);
         //val=new ModelAndView("redirect:/ListeProduitAdmin");

@@ -9,7 +9,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    List<Article> liste=(List<Article>) request.getAttribute("liste");
+    Article a=(Article) request.getAttribute("article");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,18 +23,18 @@
     <title>Articles</title>
 
     <!-- Bootstrap -->
-    <link href="../../theme/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/../../theme/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../../theme/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/../../theme/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../../theme/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="/../../theme/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="../../theme/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="/../../theme/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="../../theme/build/css/custom.min.css" rel="stylesheet">
+    <link href="/../../theme/build/css/custom.min.css" rel="stylesheet">
 </head>
-<script src="../../theme/ckeditor/ckeditor.js"></script>
+<script src="/../../theme/ckeditor/ckeditor.js"></script>
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
@@ -79,7 +79,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="x_panel" style="">
                             <div class="x_title">
-                                <h2>Ajouter un nouvel article</h2>
+                                <h2>Modifier un article</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -100,14 +100,18 @@
                             <div class="x_content">
 
                                 <div class="container">
-                                    <form action="/AI/Admin/AjoutArticle" method="post">
-                                        <p><label>Titre : </label><input type='text'  name="titre"/></p>
+                                    <form action="/AI/Admin/ModifArticle" method="post">
+                                        <p><label>Titre : </label><input type='text' width="150px" name="titre" value="<%=a.getTitre()%>"/></p>
+                                        <input type="number"  name="id" value="<%=a.getId()%>" hidden>
+                                        <p><label>Etat : </label><input type="radio" name="etat" value="1"<%if(a.getEtat()==1){%> checked <%}%>> Publié
+                                            <input type="radio" name="etat" value="0" <%if(a.getEtat()==0){%> checked <%}%>>Non publié
+                                        </p>
                                         <p><label>Resume : </label></p>
-                                        <p><textarea name="resume"></textarea></p>
+                                        <p><textarea name="resume" ><%=a.getResume()%></textarea></p>
                                         <label>Contenu : </label>
-                                        <textarea class="ckeditor form-control" id="editor" name="contenu"></textarea>
+                                        <textarea class="ckeditor form-control" id="editor" name="contenu"><%=a.getContenu()%></textarea>
                                         <p>Visuel: <input type="file" accept="image/*" name="visuel" id='imageLoader' data-type='image' onchange="image()" ></p>
-                                        <p><img style="width: 300px" class="img" id="avatar" /></p>
+                                        <p><img style="width: 300px" class="img" id="avatar" src="<%=a.getImage()%>"/></p>
                                         <textarea name="image" id="textArea" rows="30" cols="50" hidden></textarea>
                                         <input type="submit" class="btn btn-primary" value="Ajouter">
                                     </form>
@@ -125,18 +129,18 @@
 </div>
 </div>
 <!-- jQuery -->
-<script src="../../theme/vendors/jquery/dist/jquery.min.js"></script>
+<script src="/../../theme/vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="../../theme/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/../../theme/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <!-- FastClick -->
-<script src="../../theme/vendors/fastclick/lib/fastclick.js"></script>
+<script src="/../../theme/vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
-<script src="../../theme/vendors/nprogress/nprogress.js"></script>
+<script src="/../../theme/vendors/nprogress/nprogress.js"></script>
 <!-- iCheck -->
-<script src="../../theme/vendors/iCheck/icheck.min.js"></script>
+<script src="/../../theme/vendors/iCheck/icheck.min.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="../../theme/build/js/custom.min.js"></script>
+<script src="/../../theme/build/js/custom.min.js"></script>
 <script >
     const input = document.getElementById("imageLoader");
     const avatar = document.getElementById("avatar");

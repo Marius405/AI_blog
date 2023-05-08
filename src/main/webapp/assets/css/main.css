@@ -1357,11 +1357,11 @@ a.mobile-show.search-bar-icon:hover {
 
 /* -----------------------------------------------------------------------------
 
-# Hero Styles
+# Hero Stylesbg
 
 ----------------------------------------------------------------------------- */
 .hero-bg {
-  background-image: url(../img/hero-bg.jpg);
+  background-image: url(../img/lensa-ai.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1668,7 +1668,6 @@ p.excerpt {
 }
 
 .single-artcile-bg {
-  background-image: url(../img/latest-news/news-bg-3.jpg);
   height: 450px;
 }
 
